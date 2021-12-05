@@ -1,5 +1,5 @@
 ## [Project] Photogram
-API for Photogram
+API for Photogram with laravel repository pattern
 
 ### Requirement:
 
@@ -19,6 +19,8 @@ API for Photogram
 
 - Run `php artisan migrate --seed`
 
-
 ### DB
 https://dbdocs.io/shevaathalla/photogram
+
+### Documentation API
+https://documenter.getpostman.com/view/15292396/UVJhDagy

@@ -13,6 +13,7 @@ Table posts {
     id int [pk, increment]
     title varchar
     content text
+    picture varchar
     user_id int [ref: > users.id]
 }
 
