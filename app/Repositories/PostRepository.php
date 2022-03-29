@@ -15,17 +15,17 @@ class PostRepository implements PostRepositoryInterface
 
     public function getAllPosts()
     {
-        return Post::with(['user','comments'])->get();
+        return Post::with(['user'])->orderBy('created_at','DESC')->get();
     }
 
     public function getPostById(Post $post)
     {
-        return Post::with(['user','comments'])->findOrFail($post->id);
+        return Post::with(['user','comments.user'])->findOrFail($post->id);
     }
 
     public function createPost(CreatePostRequest $request)
     {
-        $user = User::find(auth()->id());
+        $user = User::find(1);
         $post = $user->posts()->create($request->all());
 
         // picture
