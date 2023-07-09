@@ -23,4 +23,4 @@ API for Photogram with laravel repository pattern
 https://dbdocs.io/shevaathalla/photogram
 
 ### Documentation API
-https://documenter.getpostman.com/view/15292396/UVJhDagy
+https://documenter.getpostman.com/view/22379061/2s93zH2eWd
