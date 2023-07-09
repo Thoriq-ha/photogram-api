@@ -28,14 +28,15 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/auth/user', function(Request $request){
         return auth()->user();
     });
+
+    Route::apiResource('/user',UserController::class);
+    Route::apiResource('/post',PostController::class);
+
+    Route::prefix('/post/{post}')->group(function (){
+        Route::apiResource('comment',CommentController::class)->only(['index','store','destroy']);
+    });
+
+    Route::apiResource('/tag', TagController::class)->only(['index','show','store']);
+
 });
-
-Route::apiResource('/user',UserController::class);
-Route::apiResource('/post',PostController::class);
-
-Route::prefix('/post/{post}')->group(function (){
-    Route::apiResource('comment',CommentController::class)->only(['index','store','destroy']);
-});
-
-Route::apiResource('/tag', TagController::class)->only(['index','show','store']);
 Route::post('/login', [AuthController::class, 'login'])->name('login');
